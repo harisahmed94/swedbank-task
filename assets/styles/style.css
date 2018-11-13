@@ -1,0 +1,464 @@
+/* RESET 
+
+Normally I use normalize.css but in this case I was not supposed to use any external scripts
+so I used this reset code snippet I got from the following source
+
+Reboots, resets and, reasoning
+URI: https://css-tricks.com/reboot-resets-reasoning/
+Author: CHRIS COYIER;
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+
+/* 
+
+	GENERAL 
+
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #512b2b;
+	background: #fcf4ec;
+	counter-reset: step;
+}
+
+.page-content {
+	width: 100%;
+	max-width: 1260px;
+	margin: 0 auto;
+}
+
+.form-body {
+	background: #fff;
+	padding: 20px;
+	margin: 10px 0 0;
+	border-radius: 3px;
+}
+
+.clearfix { zoom : 1 }
+.clearfix:after {
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/* 
+
+	TYPOGRAPHY 
+
+*/
+
+h1 {
+	margin: 10px 0 10px 20px;
+	color: #f35b1c;
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 20px 0 0;
+}
+
+.form-body__form-header {
+	margin: 20px 0;
+	padding: 0 0 2px;
+	border-bottom: 1px solid #ebe7e2;
+	font-size: 1.12rem;
+	font-weight: bold;
+}
+
+.main-text {
+	margin: 10px 0 0;
+}
+
+.main-checkbox {
+	margin: 10px 0;
+}
+
+/* 
+
+	FORM BODY SECTION 
+
+*/
+
+.form-body__form-steps {
+	list-style: none;
+}
+
+.form-body__step {
+	position: relative;
+	display: inline-block;
+	padding-top: 45px;
+	width: 13.95%;
+	text-align: center;
+	vertical-align: top;
+}
+
+.form-body__step:before {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	counter-increment: step;
+	content: counter(step);
+	display: block;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	vertical-align: top;
+	border: 2px solid #d4c4bc;
+    background-color: #d4c4bc;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -17px;
+	font-size: 18px;
+	line-height: 32px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.form-body__step:hover:before {
+	background-color: #fdc129;
+	border: 2px solid #fdc129;
+}
+
+.form-body__step:after {
+	width: 100%;
+	height: 2px;
+	content: '';
+	position: absolute;
+	top: 16px;
+	left: -50%;
+	z-index: 0;
+	background-color: #d4c4bc;
+}
+
+ol.form-body__form-steps li:first-child:after {
+	content: none;
+}
+
+.form-body__step.passed {
+	color: #d4c4bc;
+}
+
+.form-body__step.passed:before {
+	background-color: #9c6; 
+	border: 2px solid #9c6;
+	content: '\2713';
+}
+
+.form-body__step + .passed:after {
+	background-color: #9c6;
+}
+
+.form-body__step.active:before {
+	background-color: #fdc129; 
+	border: 2px solid #fdc129;
+}
+
+.slide {
+	display: none;
+}
+
+.form-body__form-common {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	border: 1px solid #bcd8db;
+	border-radius: 3px;
+	display: inline-block;
+	background-color: #fff;
+	position: relative;
+}
+
+.form-body__form-common.invalid {
+	border: 1px solid #ff033e;
+}
+
+.form-body__form-common:focus, .form-body__form-common:active{
+	outline: none;
+	box-shadow: 0 0 4px 4px rgba(254, 236, 190, 1);
+}
+
+.form-body__form-field-long {
+	width: 100%;
+	max-width: 215px;
+}
+
+.form-body__check-radio {
+	padding: 13px;
+	cursor: pointer;
+	margin-top: -1px;
+	vertical-align: middle;
+}
+
+.form-body__check-radio:hover {
+	background-color: #fdc129
+}
+
+.form-body__check:checked {
+	background-color: #ee7023;
+}
+
+.form-body__check:checked:after {
+	content: '\2714';
+	background-color: #ee7023;
+	color: #fff;
+	font-size: 16px;
+	position: absolute;
+	top: 2px;
+	left: 6.5px;
+}
+
+.input-list {
+	list-style: none;
+}
+
+.form-body__radio {
+	border-radius: 50%;
+}
+
+.form-body__radio:hover, .form-body__radio:checked:hover {
+	border: 1px solid #512b2b;
+	box-shadow: 0 0 0 2px rgba(253, 193, 41, 1);
+	background-color: #fdc129;
+}
+
+.form-body__radio:checked, .form-body__radio:active{
+	background-color: #ee7023;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 2px rgba(253, 193, 41, 1);
+}
+
+.form-body__horz-radio {
+	float: left;
+}
+
+.form-body__check-radio+label {
+	margin: 13px 20px 13px 0;
+	padding: 15px;
+}
+
+.form-captions {
+	width: 34.015%;
+	box-sizing: border-box;
+	padding: 12px 10px 10px 0;
+	margin: 10px 0 0;
+	float: left;
+	display: block;
+	text-align: right;
+}
+
+.form-captions__label {
+	color: #a38b80;
+	font-size: 1.05rem;
+}
+
+.form-fields {
+	width: 65.985%;
+	float: left;
+	padding: 11px 0;
+	margin: 10px 0 0;
+	display: inline-block;
+}
+
+.form-fields__text-fields {
+	font-size: 15px;
+	padding: 13px 10px;
+	margin-top: -11px;
+}
+
+.form-fields__select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	background-image: url('../img/select-arrow.svg');
+	background-position: right -20px center;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	padding-right: 30px;
+	
+}
+
+.form-fields__textarea {
+	resize: vertical;
+}
+
+.summaryInsert {
+	margin-left: 20px;
+}
+
+.form-body__buttons {
+	border-top: 1px solid #ebe7e2;
+	padding-top: 10px;
+}
+
+/* 
+
+	BUTTONS 
+
+*/
+
+.btn {
+	display: inline-block;
+	padding: 13px 15px;
+	border-radius: 3px;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 1.125rem;
+	color: #fff;
+	background-color: #eb7226;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
+.btn.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.btn-negative {
+	background-color: #d4b8a3;
+	color: #000;
+}
+
+.btn-back:before {
+	content: '\00ab\2009';
+	margin-left: -5px;
+}
+
+.btn-negative:hover, .btn-negative:active {
+	background-color: #dec7b6;
+    color: #898989;
+}
+
+.btn-next, .btn-submit {
+	float: right;
+}
+
+.btn-next:after {
+	content: "\2009\00bb";
+}
+
+.btn-next:hover, .btn-submit:hover,
+.btn-next:active, .btn-submit:active {
+	 background-color: #f35b1c;
+}
+
+/* 
+
+	ERROR MESSAGE 
+
+*/
+
+.errorMsg {
+	border: 1px solid #e2898d;
+    padding: 10px 30px 10px 55px;
+	background-color: #f9ded3;
+	margin-top: 35px;
+	position: relative;
+	display: none;
+}
+
+.errorMsg:before {
+	content: "";
+    top: 0;
+    left: -1px;
+    width: 43px;
+    height: 38px;
+    position: absolute;
+    background: url(https://www.swedbank.ee/img/sprite.svg);
+    background-position: -1000px -40px;
+    line-height: 1;
+    z-index: 99;
+    font-size: 37px;
+}
+
+.errorMsg.active {
+	display: block;
+}
+
+/* 
+
+	TOOLTIP
+
+*/
+
+.help-action {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	background-color: #d4b8a3;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.help-action:hover {
+	background-color: #fdc129;
+}
+
+.help-action:hover:after {
+	visibility: visible;
+}
+
+.help-action:before {
+	position: absolute;
+	content: '\003F';
+	color: #fff;
+	left: 30%;
+	line-height: 25px;
+	font-weight: 700;
+}
+
+.help-action:after {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.help-action:after{
+	position: absolute;
+	top: 110%;
+	left: 50%;
+	margin-top: 5px;
+	margin-left: -15px;
+	padding: 15px 25px;
+	width: 200px;
+	border-radius: 3px;
+	color: #512b2b;
+	background-color: #d4b8a3;
+	content: attr(data-help-text);
+	z-index: 99;
+	text-align: left;
+	font-size: 14px;
+}
