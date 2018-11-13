@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application for credit card - Swedbank</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+</head>
+<body>
+
+	<div class="page-content">
+		<h1 class="page-title">Credit card application</h2>
+		<section class="form-body">
+
+			<ol class="form-body__form-steps">
+    			<li class="form-body__step ">Introduction</li>
+			    <li class="form-body__step ">Personal information</li>
+			    <li class="form-body__step ">Limit selector</li>
+			    <li class="form-body__step ">Online transactions</li>
+			    <li class="form-body__step ">Work information</li>
+			    <li class="form-body__step ">Additional preferences</li>
+			    <li class="form-body__step ">Summary</li>
+			</ol>
+			<form action="">
+
+				<div class="errorMsg" id="error1">
+					<p>The marked fields are incomplete or incorrect / flawed!</p>
+				</div>
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Introduction</h3>
+					<p class="main-text">
+						Welcome to the Swedbank credit card application form. Before filling this form, you need to agree to our terms of service by clicking the check box below.
+					</p>
+					
+					<p class="main-checkbox"><input type="checkbox" value="agree" id="checkbox1" class="form-body__form-common form-body__check form-body__check-radio validate" required/>
+					<label for="checkbox1">I agree to Swedbank's terms of service</label></p>
+
+				</div> <!-- form-body__intro -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Personal information</h3>
+					<dl class="form-parameters clearfix">
+						
+							<dt class="form-captions">
+			  				<label class="form-captions__label" for="cardholdersName">Cardholder's name*</label>
+							</dt>
+							<dd class="form-fields">
+							  <input class="form-body__form-field-long form-body__form-common form-fields__text-fields validate" type="text" id="cardholdersName" name="cardholdersName" required/>
+							</dd>
+						
+						
+
+						<dt class="form-captions">
+			  				<label class="form-captions__label" for="cardholdersId">Cardholder's personal identity code*</label>
+						</dt>
+						<dd class="form-fields">
+						  <input class="form-body__form-field-long form-body__form-common form-fields__text-fields validate" type="text" id="cardHoldersId" name="cardHoldersId" required/>
+						</dd>
+						
+					</dl>
+					
+				</div> <!-- form-body__q -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Limit selector</h3>
+					<dl class="form-parameters clearfix">
+						<dt class="form-captions">
+						  <label class="form-captions__label" for="select-limit">Limit</label>
+						</dt>
+						<dd class="form-fields">
+						  <select class="form-body__form-field-long form-body__form-common form-fields__text-fields form-fields__select" id="selectLimit" name="selectLimit">
+						    <option value="3000">3000</option>
+						    <option value="4000">4000</option>
+						    <option value="5000">5000</option>
+						  </select>
+
+						  <span class="currency">EUR</span>
+
+						</dd>
+
+
+					</dl>
+				</div> <!-- form-body__q -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Online transactions</h3>
+					<dl class="form-parameters clearfix">
+						<dt class="form-captions">
+							<label class="form-captions__label" for="">Do you want to activate your card for online transactions?</label>
+						</dt>
+						<dd class="form-fields">
+							<ul class="input-list clearfix">
+							  <li class="form-body__horz-radio">
+							    <input type="radio" class="form-body__form-common form-body__radio form-body__check-radio validate" name="radioInput" id="radio1" required/>
+							    <label class="form-captions__label" for="radio1">Yes</label>
+							  </li>
+							  <li class=""form-body__horz-radio">
+							    <input type="radio" class="form-body__form-common form-body__radio form-body__check-radio validate" name="radioInput" id="radio2" required=/>
+							    <label class="form-captions__label" for="radio2">No</label>
+							  </li>
+						  
+							</ul>
+						</dd>
+					</dl>
+					
+				</div> <!-- form-body__q -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Work information</h3>
+					<dl class="form-parameters clearfix">
+						<dt class="form-captions">
+						  <label class="form-captions__label" for="select-occupation">Occupation / Status*</label>
+						  <span class="help-action" role="tooltip" data-help-text="Please choose your occupation."/>
+						</dt>
+						<dd class="form-fields">
+						  <select class="form-body__form-field-long form-body__form-common form-fields__text-fields form-fields__select" id="selectOccupation" name="selectOccupation">
+						    <option value="Worker">Worker</option>
+						    <option value="Owner/Shareholder">Owner/shareholder</option>
+						    <option value="Unemployed">Unemployed</option>
+						  </select>
+
+						</dd>
+					</dl>
+
+				</div> <!-- form-body__q -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Additional preferences</h3>
+					<dl class="form-parameters clearfix">
+						<dt class="form-captions">
+						  <label class="form-captions__label" for="textarea-preferences">Preferences*</label>
+						</dt>
+						<dd class="form-fields">
+						  <textarea class="form-field-textarea form-body__form-common form-body__form-field-long form-fields__text-fields form-fields__textarea validate" maxlength="2000" id="textareaPreferences" name="textareaPreferences" required></textarea>
+						  
+						</dd>
+					</dl>
+					
+				</div> <!-- form-body__q -->
+
+				<div class="slide">
+					<h3 class="form-body__form-header">Summary</h3>
+					<dl class="form-parameters clearfix">
+						<dt class="form-captions form-captions__label">
+							<p>Cardholders Name: </p>
+							<p>Cardholders Identity Code: </p>
+							<p>Card Limit: </p>
+							<p>Online Transactions: </p>
+							<p>Occupation/Status: </p>
+							<p>Preferences: </p>
+						</dt>
+						
+						<dd class="form-captions form-captions__label summaryInsert" id="summaryInsert" style="text-align: left;">
+						
+						</dd>
+					</dl>
+					
+					
+				</div> <!-- form-body__summary -->
+
+				<div class="form-body__buttons">
+
+					<a href="#" id="btn-backward" class="btn btn-negative btn-back disabled" onclick="changeSlide(1)">Back</a>
+					<a href="#" id="btn-forward" class="btn btn-next" onclick="changeSlide(0)">Next</a>
+
+				</div> <!-- form-body__buttons -->
+			</form>
+			
+
+		</section> <!-- form-body -->
+	</div> <!-- page-content -->
+
+	<script src="./assets/js/app.js"></script>
+</body>
+</html>
